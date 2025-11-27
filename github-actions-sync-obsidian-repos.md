@@ -9,20 +9,20 @@ How to automatically sync selected notes from a private Obsidian vault to a publ
 
 ## Overview
 
-> ```
-> duyet/obsidian (private)       duyet/obsidian-public (public)
->        |                                  |
->        |       GitHub Actions             |
->   Public/                                 |
->     note-1.md  ------sync------>     note-1.md
->     note-2.md  ------sync------>     note-2.md
->        |                                  |
->        v                                  v
->   Keep private                      GitHub Pages
->   notes safe                              |
->                                           v
->                        https://duyet.github.io/obsidian-public
-> ```
+```
+duyet/obsidian (private)       duyet/obsidian-public (public)
+       |                                  |
+       |       GitHub Actions             |
+  Public/                                 |
+    note-1.md  ------sync------>     note-1.md
+    note-2.md  ------sync------>     note-2.md
+       |                                  |
+       v                                  v
+  Keep private                      GitHub Pages
+  notes safe                              |
+                                          v
+                       https://duyet.github.io/obsidian-public
+```
 
 The idea: keep your full Obsidian vault private, but expose a `Public/` folder to a separate public repo that can be served via GitHub Pages.
 
