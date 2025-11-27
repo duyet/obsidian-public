@@ -1,3 +1,8 @@
+---
+title: Public Notes
+description: A collection of notes from my Obsidian vault that I've chosen to share publicly.
+---
+
 # Public Notes
 
 A collection of notes from my Obsidian vault that I've chosen to share publicly.

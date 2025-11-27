@@ -1,3 +1,8 @@
+---
+title: Sync Obsidian Vault to Public Repo with GitHub Actions
+description: How to automatically sync selected notes from a private Obsidian vault to a public repository for sharing via GitHub Pages.
+---
+
 # Sync Obsidian Vault to Public Repo with GitHub Actions
 
 How to automatically sync selected notes from a private Obsidian vault to a public repository for sharing via GitHub Pages.
