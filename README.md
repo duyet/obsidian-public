@@ -1,3 +1,7 @@
-The public content of my Obsidian Notes.
+# Public Notes
 
-Move the content to this and will be published at [duyet/obsidian-public](https://github.com/duyet/obsidian-public)
+A collection of notes from my Obsidian vault that I've chosen to share publicly.
+
+## Posts
+
+- [Sync Obsidian Vault to Public Repo with GitHub Actions](github-actions-sync-obsidian-repos.md) - How to automatically sync selected notes from a private vault to a public repository for sharing via GitHub Pages
