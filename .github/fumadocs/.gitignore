@@ -5,6 +5,9 @@ node_modules/
 .next/
 out/
 
+# Content (copied during build)
+content/
+
 # Generated source
 .source/
 

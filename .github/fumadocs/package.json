@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "mkdir -p content && rsync -av --exclude='.github' --exclude='content' ../../ ./content/ && find content -name 'README.md' -execdir mv {} index.md \\; && find content -name 'meta.json' -exec sed -i.bak 's/README/index/g' {} \\; && find content -name '*.bak' -delete",
     "build": "next build",
     "start": "next start",
     "postinstall": "fumadocs-mdx"

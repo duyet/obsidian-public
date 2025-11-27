@@ -21,30 +21,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup build environment
-        run: |
-          # Copy Fumadocs infrastructure to repo root
-          cp -r .github/fumadocs/* .
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: .github/fumadocs/package-lock.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
+        working-directory: .github/fumadocs
         run: npm ci
 
       - name: Build
+        working-directory: .github/fumadocs
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: .github/fumadocs/out
 
   deploy:
     environment:
