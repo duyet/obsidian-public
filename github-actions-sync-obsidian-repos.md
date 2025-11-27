@@ -3,25 +3,26 @@ title: Sync Obsidian Vault to Public Repo with GitHub Actions
 description: How to automatically sync selected notes from a private Obsidian vault to a public repository for sharing via GitHub Pages.
 ---
 
-# Sync Obsidian Vault to Public Repo with GitHub Actions
-
-How to automatically sync selected notes from a private Obsidian vault to a public repository for sharing via GitHub Pages.
-
 ## Overview
 
 ```
-duyet/obsidian (private)       duyet/obsidian-public (public)
-       |                                  |
-       |       GitHub Actions             |
-  Public/                                 |
-    note-1.md  ------sync------>     note-1.md
-    note-2.md  ------sync------>     note-2.md
-       |                                  |
-       v                                  v
-  Keep private                      GitHub Pages
-  notes safe                              |
-                                          v
-                       https://duyet.github.io/obsidian-public
+┌──────────────────┐      ┌──────────────────┐
+│ duyet/obsidian   │      │ duyet/obsidian-  │
+│ (private)        │      │ public (public)  │
+├──────────────────┤      ├──────────────────┤
+│                  │      │                  │  build             GitHub Pages
+│ Personal/        │      │ note-1.md        │  (GitHub Actions)  duyet.github.io/
+│ Work/            │      │ note-2.md        │──────────────────► obsidian-public
+│ Journals/        │      │ .github/fumadocs │
+│ Public/     ───────────►│                  │
+│   note-1.md      │      │                  │
+│   note-2.md      │      │                  │
+│                  │      │                  │
+└────────┬─────────┘      └──────────────────┘
+         │                            ▲
+         │  repo-file-sync (Public/)  │
+         └────────────────────────────┘
+              GitHub Actions
 ```
 
 The idea: keep your full Obsidian vault private, but expose a `Public/` folder to a separate public repo that can be served via GitHub Pages.
@@ -105,7 +106,14 @@ jobs:
 - `deleteOrphaned: true` keeps public repo clean when you remove notes
 - Consider adding an `INDEX.md` as landing page
 
+## Note
+
+This page is rendered using [fumadocs.dev](https://fumadocs.dev). See the [.github/fumadocs](https://github.com/duyet/obsidian-public/tree/master/.github/fumadocs) folder for configuration.
+
+You can build the public repo with any static framework (Next.js, Astro, etc.) and deploy to any platform (Vercel, Cloudflare Pages, Netlify, etc.).
+
 ## References
 
 - [BetaHuhn/repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [fumadocs.dev](https://fumadocs.dev)
