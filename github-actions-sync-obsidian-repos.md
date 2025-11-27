@@ -114,6 +114,7 @@ You can build the public repo with any static framework (Next.js, Astro, etc.) a
 
 ## References
 
+- [duyet/obsidian-public](https://github.com/duyet/obsidian-public) - Live example of this setup
 - [BetaHuhn/repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [fumadocs.dev](https://fumadocs.dev)
