@@ -5,16 +5,16 @@ How to automatically sync selected notes from a private Obsidian vault to a publ
 ## Overview
 
 > ```
-> obsidian (private)          obsidian-public (public)
->        |                            |
->        |   GitHub Actions           |
->   Public/                           |
->     note-1.md  ----sync---->   note-1.md
->     note-2.md  ----sync---->   note-2.md
->        |                            |
->        v                            v
->   Keep private               GitHub Pages
->   notes safe                 for sharing
+> duyet/obsidian (private)       duyet/obsidian-public (public)
+>        |                                  |
+>        |       GitHub Actions             |
+>   Public/                                 |
+>     note-1.md  ------sync------>     note-1.md
+>     note-2.md  ------sync------>     note-2.md
+>        |                                  |
+>        v                                  v
+>   Keep private                      GitHub Pages
+>   notes safe                        for sharing
 > ```
 
 The idea: keep your full Obsidian vault private, but expose a `Public/` folder to a separate public repo that can be served via GitHub Pages.
@@ -72,8 +72,6 @@ jobs:
         uses: BetaHuhn/repo-file-sync-action@v1
         with:
           GH_PAT: ${{ secrets.GH_PAT }}
-          GIT_EMAIL: your-email@users.noreply.github.com
-          GIT_USERNAME: your-username
           SKIP_PR: true
           COMMIT_PREFIX: 'chore(sync):'
 ```
