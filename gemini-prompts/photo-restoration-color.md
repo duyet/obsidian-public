@@ -14,8 +14,8 @@ quality, in full color, upscale to 4K
 
 ## Before & After
 
-| Before | After |
-|--------|-------|
+| Before                                                                        | After                                                                           |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | ![Before](https://pbs.twimg.com/media/G6wJc_cXwAAhhYn?format=jpg&name=medium) | ![After](https://pbs.twimg.com/media/G6wJh9pWwAAXU7N?format=jpg&name=4096x4096) |
 
 ## Reference

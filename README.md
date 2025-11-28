@@ -23,6 +23,15 @@ Curated prompts for Google Gemini models.
 - [Photo Restoration (Color)](/gemini-prompts/photo-restoration-color) - Restore and colorize old photos with 4K upscaling
 - [Photo Restoration (Vivid)](/gemini-prompts/photo-restoration-vivid) - Professional portrait quality with vivid colors
 - [Hand-Drawn Infographic](/gemini-prompts/hand-drawn-infographic) - Generate sketched infographics with random statistics and sources
+- [Fluffy Plush Logo](/gemini-prompts/fluffy-plush-logo) - Transform flat logos into soft, furry 3D plush objects
+- [Character Deconstruction](/gemini-prompts/character-deconstruction) - Fashion concept breakdown diagrams with clothing, expressions, and accessories
+- [Blackboard Chalk Drawing](/gemini-prompts/blackboard-chalk-drawing) - Transform images into colored chalk drawings on a classroom blackboard
+- [Isometric Extraction](/gemini-prompts/isometric-extraction) - Extract objects from photos and render as clean isometric 3D models
+- [Custom Character Stickers](/gemini-prompts/custom-character-stickers) - Transform characters into web illustration stickers with white outlines
+- [Red Pen Annotations](/gemini-prompts/red-pen-annotations) - Get visual red pen markup showing areas for improvement
+- [Makeup Analysis](/gemini-prompts/makeup-analysis) - Analyze makeup looks with red pen feedback on technique
+- [Miniature Product Photo](/gemini-prompts/miniature-product-photo) - Luxury advertising photos of tiny products held between fingers
+- [Model Cross-Section](/gemini-prompts/model-cross-section) - Cutaway visualizations showing interior and exterior simultaneously
 
 ## TL;DR
 
