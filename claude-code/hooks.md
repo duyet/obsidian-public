@@ -1,5 +1,5 @@
 ---
-title: Claude Code Hooks
+title: Hooks
 description: Lifecycle hooks to customize Claude Code behavior.
 ---
 
@@ -142,6 +142,73 @@ Auto-format markdown files after edits:
 │ Session ends                                              │
 └───────────────────────────────────────────────────────────┘
 ```
+
+## Example 4: Auto-Update README on File Changes
+
+Track changes to Public/ folder and update README.md before session ends:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              AUTO-UPDATE README FLOW                                │
+│                                                                     │
+│  Write/Edit to Public/*.md                                          │
+│       │                                                             │
+│       ▼                                                             │
+│  ┌──────────────────┐                                               │
+│  │  PostToolUse     │  Track: touch /tmp/claude_public_changed      │
+│  │  (command hook)  │  Skip: README.md itself                       │
+│  └────────┬─────────┘                                               │
+│           │                                                         │
+│           ▼                                                         │
+│  [... more edits ...]                                               │
+│           │                                                         │
+│           ▼                                                         │
+│  ┌──────────────────┐     ┌─────────────────────────────────────┐   │
+│  │  Stop            │────►│  1. Command: check flag file        │   │
+│  │  (chained hooks) │     │     output PUBLIC_CHANGED if exists │   │
+│  └──────────────────┘     │  2. Prompt: if PUBLIC_CHANGED,      │   │
+│                           │     update Public/README.md         │   │
+│                           └─────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file_path=$(echo $TOOL_INPUT | jq -r '.file_path // empty' 2>/dev/null); if echo \"$file_path\" | grep -q 'Public/.*\\.md' && ! echo \"$file_path\" | grep -q 'README.md'; then touch /tmp/claude_public_changed; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f /tmp/claude_public_changed ]; then rm /tmp/claude_public_changed; echo 'PUBLIC_CHANGED'; exit 0; fi; exit 0"
+          },
+          {
+            "type": "prompt",
+            "prompt": "If PUBLIC_CHANGED was output, update Public/README.md to list all markdown files in Public/ folder with their titles. Keep existing format. Return JSON: {\"decision\": \"approve\", \"reason\": \"...\"}",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**How it works:**
+- **PostToolUse**: On every Write/Edit, checks if file is in `Public/*.md` (excluding README.md), creates flag file
+- **Stop (command)**: Checks flag, outputs `PUBLIC_CHANGED` to stdout, cleans up
+- **Stop (prompt)**: LLM sees stdout, updates README if needed
 
 ## References
 
