@@ -5,27 +5,61 @@ description: How skills work internally in Claude Code.
 
 Skills are modular packages of instructions, scripts, and resources that extend Claude's capabilities. They are auto-discovered at startup and activated dynamically when relevant to the current task.
 
-![Agent + Skills + Virtual Machine](https://www-cdn.anthropic.com/images/4zrzovbb/website/4b05be6bdcb92ab1f920ef95c5f6cdf82a7a44e9-2512x1396.png)
+```
+┌───────────────────────────────────────────────────────────────────────────────────────┐
+│                          AGENT + SKILLS + VIRTUAL MACHINE                             │
+├─────────────────────────────────────────┬─────────────────────────────────────────────┤
+│         Agent Configuration             │           Agent Virtual Machine             │
+│                                         │                                             │
+│  ┌───────────────────────────────────┐  │  use      ┌─────────┬─────────┬─────────┐   │
+│  │       Core System Prompt          │──┼─computer─►│  Bash   │ Python  │ Node.js │   │
+│  └───────────────────────────────────┘  │           └─────────┴─────────┴─────────┘   │
+│                                         │                                             │
+│  Equipped Skills                        │  File System                                │
+│  ┌─────────┬──────┬────────────┐        │  ┌───────────────────┬───────────────────┐  │
+│  │bigquery │ docx │ nda-review │        │  │ skills/bigquery/  │ skills/docx/      │  │
+│  ├─────────┼──────┼────────────┤        │  │  - SKILL.md       │  - SKILL.md       │  │
+│  │  pdf    │ pptx │    xlsx    │        │  │  - datasources.md │  - ooxml/         │  │
+│  └────┬────┴──────┴────────────┘        │  │  - rules.md       │  - spec.md        │  │
+│       │                                 │  ├───────────────────┼───────────────────┤  │
+│       │  Contents of Skill directories  │  │ skills/nda-review/│ skills/pdf/       │  │
+│       └──live in the agent's ───────────┼─►│  - SKILL.md       │  - SKILL.md       │  │
+│          file system                    │  │                   │  - forms.md       │  │
+│                                         │  │                   │  - reference.md   │  │
+│  Equipped MCP Servers                   │  │                   │  - extract.py     │  │
+│  ┌─────────────────────────────────┐    │  └───────────────────┴───────────────────┘  │
+│  │ ○ MCP server 1                  │    │                                             │
+│  │ ○ MCP server 2                  │    │                                             │
+│  │ ○ MCP server 3                  │    │                                             │
+│  └──────────┬──────────────────────┘    │                                             │
+│             │                           │                                             │
+│             ▼                           │                                             │
+│  ┌──────────┬──────────┬──────────┐     │                                             │
+│  │○ MCP 1   │○ MCP 2   │○ MCP 3   │     │                                             │
+│  └──────────┴──────────┴──────────┘     │                                             │
+│  Remote MCP servers (on the internet)   │                                             │
+└─────────────────────────────────────────┴─────────────────────────────────────────────┘
+```
 
 A skill is a directory containing a `SKILL.md` file with organized folders of instructions, scripts, and resources that give agents additional capabilities.
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    SKILL DISCOVERY (on startup)                     │
-│                                                                     │
-│  ~/.claude/skills/     .claude/skills/      ~/.claude/plugins/      │
-│  ┌───────────────┐    ┌───────────────┐    ┌───────────────┐        │
-│  │   SKILL.md    │    │   SKILL.md    │    │   SKILL.md    │        │
-│  └───────┬───────┘    └───────┬───────┘    └───────┬───────┘        │
-│          │                    │                    │                │
-│          └────────────────────┼────────────────────┘                │
-│                               ▼                                     │
-│                    ┌─────────────────────┐                          │
-│                    │  SKILL REGISTRY     │                          │
-│                    │  (name + description│                          │
-│                    │   only, ~1KB each)  │                          │
-│                    └─────────────────────┘                          │
-└─────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                    SKILL DISCOVERY (on startup)                  │
+│                                                                  │
+│  ~/.claude/skills/     .claude/skills/      ~/.claude/plugins/   │
+│  ┌───────────────┐    ┌───────────────┐    ┌───────────────┐     │
+│  │   SKILL.md    │    │   SKILL.md    │    │   SKILL.md    │     │
+│  └───────┬───────┘    └───────┬───────┘    └───────┬───────┘     │
+│          │                    │                    │             │
+│          └────────────────────┼────────────────────┘             │
+│                               ▼                                  │
+│                    ┌─────────────────────┐                       │
+│                    │  SKILL REGISTRY     │                       │
+│                    │  (name + description│                       │
+│                    │   only, ~1KB each)  │                       │
+│                    └─────────────────────┘                       │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ```
@@ -71,7 +105,54 @@ A skill is a directory containing a `SKILL.md` file with organized folders of in
 
 Skills employ a tiered information loading system to prevent context window bloat:
 
-![Skills and the Context Window](https://www-cdn.anthropic.com/images/4zrzovbb/website/8eaf0f86467f2a3be2becea6a42a8f26ed5f65e7-2512x1860.png)
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                         SKILLS AND THE CONTEXT WINDOW                                  │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                        │
+│                              Context Window                                            │
+│  ┌──────────────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                                  │  │
+│  │   ┌─────────────────────────────────────────────────────────────────────────┐    │  │
+│  │   │                    Agent's System Prompt                                │    │  │
+│  │   └─────────────────────────────────────────────────────────────────────────┘    │  │
+│  │                                                                                  │  │
+│  │   Short snippets        ┌─────────┬──────┬────────────┬─────┬──────┬──────┐      │  │
+│  │   from each Skill  ────►│bigquery │ docx │ nda-review │ pdf │ pptx │ xlsx │      │  │
+│  │   appended to           └─────────┴──────┴────────────┴─────┴──────┴──────┘      │  │
+│  │   system prompt                                                                  │  │
+│  │                                                                                  │  │
+│  │   Initial message  ────►┌─────────────────────────────────────────────────────┐  │  │
+│  │   from user             │ User: Fill out this PDF based on what you know      │  │  │
+│  │                         │ Attached: /mnt/uploads/order_form.pdf               │  │  │
+│  │                         └─────────────────────────────────────────────────────┘  │  │
+│  │                                                                                  │  │
+│  │                         ┌─────────────────────────────────────────────────────┐  │  │
+│  │                         │ Claude: Certainly! I'll use the PDF Skill to help   │  │  │
+│  │                         └─────────────────────────────────────────────────────┘  │  │
+│  │                                                                                  │  │
+│  │   Claude decides   ────►┌─────────────────────────────────────────────────────┐  │  │
+│  │   to "trigger" the      │ Tool use: Bash("cat /mnt/skills/pdf/SKILL.md")      │  │  │
+│  │   PDF Skill by          └─────────────────────────────────────────────────────┘  │  │
+│  │   reading it                                                                     │  │
+│  │                         ┌─────────────────────────────────────────────────────┐  │  │
+│  │                         │ Tool result: {...contents of SKILL.md file...}      │  │  │
+│  │                         └─────────────────────────────────────────────────────┘  │  │
+│  │                                                                                  │  │
+│  │   Claude follows   ────►┌─────────────────────────────────────────────────────┐  │  │
+│  │   reference from        │ Tool use: Bash("cat /mnt/skills/pdf/forms.md")      │  │  │
+│  │   SKILL.md to           └─────────────────────────────────────────────────────┘  │  │
+│  │   forms.md                                                                       │  │
+│  │                         ┌─────────────────────────────────────────────────────┐  │  │
+│  │                         │ Tool result: {...contents of forms.md file...}      │  │  │
+│  │                         └─────────────────────────────────────────────────────┘  │  │
+│  │                                                                                  │  │
+│  └──────────────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                        │
+│  Skills are triggered in the context window via your system prompt.                    │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 | Level | What's Loaded | When |
 |-------|---------------|------|
