@@ -1,5 +1,5 @@
 ---
-title: Claude Code Plugin Marketplaces
+title: Plugin Marketplaces
 description: Share and discover Claude Code plugins via marketplaces.
 ---
 

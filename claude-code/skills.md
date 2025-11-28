@@ -1,5 +1,5 @@
 ---
-title: Claude Code Agent Skills
+title: Agent Skills
 description: How skills work internally in Claude Code.
 ---
 
