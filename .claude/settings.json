@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file_path=$(echo $TOOL_INPUT | jq -r '.file_path // empty' 2>/dev/null); if echo \"$file_path\" | grep -q 'Public/.*\\.md$' && ! echo \"$file_path\" | grep -q 'README.md$'; then touch /tmp/claude_public_changed; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f /tmp/claude_public_changed ]; then rm /tmp/claude_public_changed; echo 'PUBLIC_CHANGED'; exit 0; fi; exit 0"
+          },
+          {
+            "type": "prompt",
+            "prompt": "If PUBLIC_CHANGED was output, update Public/README.md to list all markdown files in Public/ folder with their titles. Keep existing format. Return JSON: {\"decision\": \"approve\", \"reason\": \"...\"}",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
