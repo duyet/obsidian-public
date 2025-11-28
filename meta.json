@@ -1,4 +1,4 @@
 {
   "title": "Duyet Notes",
-  "pages": ["index", "claude-code", "tldr", "gemini-prompts"]
+  "pages": ["index", "tutorials", "claude-code", "tldr", "gemini-prompts"]
 }
