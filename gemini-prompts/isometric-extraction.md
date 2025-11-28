@@ -5,7 +5,14 @@ description: Extract objects from photos and render them as clean isometric 3D m
 
 Extract buildings, vehicles, or objects from photos and convert them to daytime isometric renders.
 
-![Example](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/output.jpg)
+
+## Examples
+
+| Input | Output |
+|-------|--------|
+| ![Input 1](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/input.jpg) | ![Output 1](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/output.jpg) |
+| ![Input 2](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/input2.jpg) | ![Output 2](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/output2.jpg) |
+
 
 ## The Prompt
 
@@ -24,13 +31,6 @@ Modify `[Building Only]` to extract different subjects:
 - `[People Only]` - Extract human figures
 - `[Furniture Only]` - Extract interior objects
 - `[Tree Only]` - Extract vegetation
-
-## Examples
-
-| Input | Output |
-|-------|--------|
-| ![Input 1](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/input.jpg) | ![Output 1](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/output.jpg) |
-| ![Input 2](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/input2.jpg) | ![Output 2](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case4/output2.jpg) |
 
 ## Reference
 

@@ -5,7 +5,12 @@ description: Create cutaway visualizations showing interior and exterior of obje
 
 Generate technical cross-section views revealing internal structure while preserving exterior details.
 
-![Example](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case80/output.png)
+## Example
+
+| Input | Output (Cross-Section) |
+|-------|------------------------|
+| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case80/input.png) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case80/output.png) |
+
 
 ## The Prompt
 
@@ -27,11 +32,6 @@ Adapt for different subjects:
 - **Anatomy**: `...show skin intact on one side, muscles + organs exposed on the other`
 - **Machines**: `...show housing intact on one side, gears + mechanisms exposed on the other`
 
-## Example
-
-| Input | Output (Cross-Section) |
-|-------|------------------------|
-| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case80/input.png) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case80/output.png) |
 
 ## Reference
 

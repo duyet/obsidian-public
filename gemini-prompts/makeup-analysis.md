@@ -5,7 +5,11 @@ description: Get visual feedback on makeup with red pen annotations showing area
 
 Analyze makeup looks and get visual red pen annotations highlighting areas to improve.
 
-![Example](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case37/output.jpg)
+## Example
+
+| Input | Output (with annotations) |
+|-------|---------------------------|
+| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case37/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case37/output.jpg) |
 
 ## The Prompt
 
@@ -26,11 +30,6 @@ Upload a portrait or selfie showing the makeup you want feedback on.
 - Contouring and highlighting
 - Overall color harmony
 
-## Example
-
-| Input | Output (with annotations) |
-|-------|---------------------------|
-| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case37/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case37/output.jpg) |
 
 ## Reference
 

@@ -5,7 +5,12 @@ description: Transform flat vector logos into soft, furry 3D plush objects with 
 
 Turn any flat logo into a tactile, fluffy 3D object floating in studio lighting.
 
-![Example](https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/refs/heads/main/images/pro_case12/output.jpg)
+## Examples
+
+|                                                                                 |                                                                                 |                                                                                                                                |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| ![Example 1](https://pbs.twimg.com/media/G6cZZCoaoAAX-Yp?format=jpg&name=large) | ![Example 2](https://pbs.twimg.com/media/G6k3fXXbYAAuutd?format=jpg&name=large) | ![Example](https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/refs/heads/main/images/pro_case12/output.jpg) |
+
 
 ## The Prompt
 
@@ -18,15 +23,6 @@ modern, creating a comfortable and playful feeling. Use studio lighting and
 high-resolution rendering.
 ```
 
-## Input
-
-Upload a reference image of your logo.
-
-## Examples
-
-| | |
-|---|---|
-| ![Example 1](https://pbs.twimg.com/media/G6cZZCoaoAAX-Yp?format=jpg&name=large) | ![Example 2](https://pbs.twimg.com/media/G6k3fXXbYAAuutd?format=jpg&name=medium) |
 
 ## Reference
 

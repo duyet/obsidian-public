@@ -4,7 +4,9 @@ description: Generate random hand-sketched infographics with real statistics and
 ---
 
 Generate unique hand-drawn style infographics comparing interesting statistics across countries - complete with sources.
+## Example Output
 
+![Hand-drawn infographic example](https://pbs.twimg.com/media/G6lmHwXWYAApyV7?format=jpg&name=large)
 ## The Prompt
 
 ```
@@ -24,9 +26,4 @@ that make it feel authentic. The aesthetic is like a designer's working
 notebook - professional data visualization meets casual sketchbook artistry.
 Paper texture visible, slight shadows, organic and warm feel.]
 ```
-
-## Example Output
-
-![Hand-drawn infographic example](https://pbs.twimg.com/media/G6lmHwXWYAApyV7?format=jpg&name=large)
-
 

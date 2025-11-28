@@ -5,7 +5,12 @@ description: Get visual feedback on images with red pen markup showing areas for
 
 Analyze any image and get visual red pen annotations highlighting areas to improve.
 
-![Example](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case29/output.jpg)
+## Example
+
+| Input | Output (with annotations) |
+|-------|---------------------------|
+| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case29/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case29/output.jpg) |
+
 
 ## The Prompt
 
@@ -16,19 +21,6 @@ Analyze this image. Use red pen to denote where you can improve.
 ## Input
 
 Upload an image you want feedback on (artwork, design, photo, etc.).
-
-## Use Cases
-
-- **Art critique**: Get feedback on drawings, paintings, illustrations
-- **Design review**: Identify layout, typography, or composition issues
-- **Photo editing**: Spot areas needing retouching or adjustment
-- **UI/UX feedback**: Mark usability or visual hierarchy problems
-
-## Example
-
-| Input | Output (with annotations) |
-|-------|---------------------------|
-| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case29/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case29/output.jpg) |
 
 ## Reference
 

@@ -5,7 +5,12 @@ description: Transform characters into web illustration style stickers with whit
 
 Turn any character into a cute sticker with white outline and caption.
 
-![Example](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case10/output.jpg)
+## Example
+
+| Input (Character) | Output (Sticker) |
+|-------------------|------------------|
+| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case10/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case10/output.jpg) |
+
 
 ## The Prompt
 
@@ -21,11 +26,6 @@ Upload two images:
 1. **Figure 1**: The character you want to transform
 2. **Figure 2**: A sticker reference showing the desired style
 
-## Example
-
-| Input (Character) | Output (Sticker) |
-|-------------------|------------------|
-| ![Input](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case10/input.jpg) | ![Output](https://github.com/PicoTrex/Awesome-Nano-Banana-images/raw/main/images/case10/output.jpg) |
 
 ## Reference
 
