@@ -19,7 +19,8 @@ description: A collection of notes from my Obsidian vault that I've chosen to sh
 
 Curated prompts for Google Gemini models.
 
-- [Photo Restoration](/gemini-prompts/photo-restoration) - Restore vintage photographs to 8K quality with super-resolution
+- [Photo Restoration (B&W)](/gemini-prompts/photo-restoration) - Restore vintage photographs to 8K quality with super-resolution
+- [Photo Restoration (Color)](/gemini-prompts/photo-restoration-color) - Restore and colorize old photos with 4K upscaling
 - [Hand-Drawn Infographic](/gemini-prompts/hand-drawn-infographic) - Generate sketched infographics with random statistics and sources
 
 ## TL;DR
