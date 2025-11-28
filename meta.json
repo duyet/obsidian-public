@@ -1,4 +1,4 @@
 {
   "title": "Duyet Notes",
-  "pages": ["index", "github-actions-sync-obsidian-repos", "claude-code", "tldr"]
+  "pages": ["index", "claude-code", "tldr", "gemini-prompts"]
 }
