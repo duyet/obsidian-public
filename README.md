@@ -21,6 +21,7 @@ Curated prompts for Google Gemini models.
 
 - [Photo Restoration (B&W)](/gemini-prompts/photo-restoration) - Restore vintage photographs to 8K quality with super-resolution
 - [Photo Restoration (Color)](/gemini-prompts/photo-restoration-color) - Restore and colorize old photos with 4K upscaling
+- [Photo Restoration (Vivid)](/gemini-prompts/photo-restoration-vivid) - Professional portrait quality with vivid colors
 - [Hand-Drawn Infographic](/gemini-prompts/hand-drawn-infographic) - Generate sketched infographics with random statistics and sources
 
 ## TL;DR
