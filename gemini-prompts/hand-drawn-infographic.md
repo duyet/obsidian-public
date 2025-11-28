@@ -29,29 +29,4 @@ Paper texture visible, slight shadows, organic and warm feel.]
 
 ![Hand-drawn infographic example](https://pbs.twimg.com/media/G6lmHwXWYAApyV7?format=jpg&name=large)
 
-## Key Features
 
-| Feature | Description |
-|---------|-------------|
-| **Random Statistics** | Generates interesting comparative data across 8-12 countries |
-| **Hand-Drawn Style** | Cross-hatching, pen strokes, natural imperfections |
-| **Flag Integration** | National flags sketched with ink pens and colored pencils |
-| **Source Citations** | Includes data sources for verification |
-| **Sketchbook Aesthetic** | Cream paper, visible texture, designer notebook feel |
-
-## Suggested Topics
-
-- Tea/coffee consumption per capita
-- Smartphone ownership rates
-- Urban population percentage
-- Bicycle usage statistics
-- Book reading hours per week
-- Internet penetration rates
-- Renewable energy adoption
-
-## Tips
-
-- The model picks random but factual statistics
-- Each generation produces different country comparisons
-- Sources are included for fact-checking
-- Works well for educational content and social media
