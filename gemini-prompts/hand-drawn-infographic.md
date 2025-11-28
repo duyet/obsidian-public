@@ -1,0 +1,57 @@
+---
+title: "Hand-Drawn Infographic Generator"
+description: Generate random hand-sketched infographics with real statistics and source citations.
+---
+
+Generate unique hand-drawn style infographics comparing interesting statistics across countries - complete with sources.
+
+## The Prompt
+
+```
+[A hand-drawn infographic sketch on cream-colored sketchbook paper showing
+comparative statistics between different countries. The chart features
+national flags drawn with ink pens and colored pencils integrated into the
+visualization. All elements are sketched by hand: bars, lines, numbers, and
+country names written in casual handwritten font style. Colors are filled in
+with cross-hatching, parallel lines, and pen strokes rather than solid
+watercolor - creating a textured, sketchy appearance. Each data point shows
+precise numerical values written by hand. The chart compares an interesting
+statistic across 8-12 countries (like tea consumption per capita, smartphone
+ownership, urban population percentage, bicycle usage, book reading hours,
+or other fascinating metrics). Clean but clearly hand-drawn grid lines,
+artistic pen work with visible strokes and texture, natural imperfections
+that make it feel authentic. The aesthetic is like a designer's working
+notebook - professional data visualization meets casual sketchbook artistry.
+Paper texture visible, slight shadows, organic and warm feel.]
+```
+
+## Example Output
+
+![Hand-drawn infographic example](https://pbs.twimg.com/media/G6lmHwXWYAApyV7?format=jpg&name=large)
+
+## Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **Random Statistics** | Generates interesting comparative data across 8-12 countries |
+| **Hand-Drawn Style** | Cross-hatching, pen strokes, natural imperfections |
+| **Flag Integration** | National flags sketched with ink pens and colored pencils |
+| **Source Citations** | Includes data sources for verification |
+| **Sketchbook Aesthetic** | Cream paper, visible texture, designer notebook feel |
+
+## Suggested Topics
+
+- Tea/coffee consumption per capita
+- Smartphone ownership rates
+- Urban population percentage
+- Bicycle usage statistics
+- Book reading hours per week
+- Internet penetration rates
+- Renewable energy adoption
+
+## Tips
+
+- The model picks random but factual statistics
+- Each generation produces different country comparisons
+- Sources are included for fact-checking
+- Works well for educational content and social media
