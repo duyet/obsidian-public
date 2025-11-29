@@ -265,7 +265,7 @@ This is where the series pauses. The bot is working, reliable enough for daily u
 
 | Day | What Happened |
 |-----|---------------|
-| [Day 1](./day-1-first-pivot) | Wanted Claude Code SDK, realized Workers limitations, pivoted |
+| [Day 1](./day-1-first-idea) | Wanted Claude Code SDK, realized Workers limitations, pivoted |
 | [Day 2](./day-2-redesign) | Redesigned with 8 Durable Objects, picked Grok (free) |
 | [Day 3](./day-3-mcp-integration) | Added MCP, fought with timeouts, discovered alarms |
 | [Day 4](./day-4-hallucination) | Bot lied about news, added web search, simplified providers |

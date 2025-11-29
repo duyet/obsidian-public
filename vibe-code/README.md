@@ -11,7 +11,7 @@ A series documenting the journey of building a multi-agent AI system on Cloudfla
 
 | Day | Title | What Happened |
 |-----|-------|---------------|
-| [Day 1](./day-1-first-pivot) | First Pivot | Wanted Claude Code SDK, realized Workers limitations, pivoted |
+| [Day 1](./day-1-first-idea) | First Idea | Wanted Claude Code SDK, realized Workers limitations, pivoted |
 | [Day 2](./day-2-redesign) | Redesign | Redesigned with 8 Durable Objects, picked Grok (free) |
 | [Day 3](./day-3-mcp-integration) | MCP Integration | Added MCP, fought with timeouts, discovered alarms |
 | [Day 4](./day-4-hallucination) | Hallucination | Bot lied about news, added web search, simplified providers |
