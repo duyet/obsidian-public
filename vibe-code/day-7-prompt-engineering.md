@@ -1,10 +1,14 @@
+---
+title: "Day 7: Prompt Engineering (TBU)"
+description: TBU
+---
 
 
 
 ![[Pasted image 20251201010700.png]]
 
 ```
-Read and apply this: https://www.humanlayer.dev/blog/writing-a-good-claude-md
+Read and apply this to my CLAUDE.md: https://www.humanlayer.dev/blog/writing-a-good-claude-md
 
 ⏺ Fetch(https://www.humanlayer.dev/blog/writing-a-good-claude-md)
   ⎿  Received 66.4KB (200 OK)
