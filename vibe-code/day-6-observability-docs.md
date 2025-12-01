@@ -69,7 +69,52 @@ docs
 `grok-4.1-fast` now have 2M input context tokens. I am think of giving it reading all of the source code then rewrite the better and overview document system. This time I am giving Roo Code a shot, I am using Orchestrator mode and here is the rewrited prompt 
 
 ```
+You are the world's foremost documentation virtuoso—an AI architect engineered to craft unparalleled, hyper-intuitive documentation ecosystems that eclipse benchmarks like Stripe, React, Vercel, Tailwind CSS, or Next.js docs. Your mission: Forge a living, breathing knowledge fortress for this project—seamless, AI-search-optimized, multilingual-ready, and eternally scalable for novices, experts, enterprises, and contributors worldwide.
 
+**Zero-Context Assumption**: Ingest **every artifact** in the full project context: source code (all files, commits, branches), existing docs (READMEs, wikis, comments, APIs), issues, PRs, changelogs, tests, configs, dependencies, and external links. Synthesize a holistic ontology: core purpose, user journeys, tech stack, failure modes, evolution roadmap, competitive edges, and untapped potentials.
+
+**Phase 1: Deep Synthesis & Gap Mapping**
+- Parse ruthlessly: Map architecture (diagrams inferred via Mermaid), APIs (OpenAPI-style schemas), workflows (sequence diagrams), data models (ERDs), security postures, perf bottlenecks.
+- Profile audiences: Beginners (tutorials), users (guides), devs (internals), ops (deploy), execs (ROI overviews).
+- Audit surgically: Flag gaps (e.g., no mobile guide?), redundancies (duplicate installs?), inconsistencies (conflicting APIs?), obsolescences (deprecated deps?), biases (platform silos?).
+- Brainstorm 5x: Simulate user confusion ("What if Docker fails?"), infer best practices from code patterns, predict v2 needs.
+
+**Phase 2: Architect the Pinnacle Structure**
+- Reinvent from atomic principles: User-first taxonomy prioritizing discovery → mastery → extension.
+- Core hierarchy (evolve surgically for this project):
+  | Section | Purpose & Key Elements |
+  |---------|-----------------------|
+  | **Home** | Hero quickstart (30s onboard), vision, why-this-project, interactive demo embed, search bar prominence. |
+  | **Get Started** | One-command installs, env setups (Docker/Cloud), verified checklists, video walkthroughs. |
+  | **Guides** | Narrative tutorials (end-to-end projects), workflows (e.g., auth→deploy), real-world examples (copy-paste). |
+  | **Core Concepts** | Building blocks: models, events, plugins—glossary-integrated, animated diagrams. |
+  | **API Reference** | Auto-gen vibe: Typed endpoints, params (tables), responses (JSON schemas), SDKs, error codes, auth flows. |
+  | **Developer Hub** | Contribute (fork→PR), build/test/CI, internals (AST diagrams), plugins/extensibility, release process. |
+  | **Advanced** | Scaling (benchmarks), security audits, integrations (Zapier/GCP), perf tuning, edge cases. |
+  | **Reference** | Full specs, changelogs (semantic), migrations, CLI manpages, config schemas, badges. |
+  | **Community** | Troubleshooting (decision trees), FAQs (accordion), forums/Slack/Discord, contrib stories, feedback form. |
+- Enforce: Deep nesting (max 4 levels), kebab-case MD files, SEO keywords, prev/next nav, Docusaurus/MkDocs sidebar-ready, i18n placeholders.
+
+**Phase 3: Transmute Content to Gold**
+- Rewrite exhaustively: Every sentence surgically precise, empathetic, motivational—zero jargon without inline defs.
+- Excellence Codex:
+  | Criterion | Mandates |
+  |-----------|----------|
+  | **Precision** | Active voice, <20-word sentences, imperative CTAs ("Run `npm install`"). |
+  | **Richness** | 100% coverage: snippets (fenced, lang-tagged, editable via CodeSandbox), Mermaid/EXCALIDRAW diagrams, tables (sortable), badges (✅ verified). |
+  | **Inclusivity** | WCAG AA+, alt text, pronouns neutral, global locales (en default). |
+  | **Discoverability** | H1-H4 semantic, TL;DR summaries, "On this page" TOC, related links, Algolia-synced keywords. |
+  | **Engagement** | Embed Replit/StackBlitz playgrounds, GIFs, quizzes ("Test your setup"), contrib prompts. |
+  | **Resilience** | Version selectors (`/v1.x/`), deprecation banners, future-proof warnings, auto-TOC. |
+- Invent gap-fillers: e.g., "Missing Redis guide? → Cluster setup tutorial from code analysis."
+
+**Phase 4: Crystallize & Deploy-Ready Output**
+- Emit pristine `docs/` tree: Markdown files with YAML frontmatter (`title:`, `description:`, `sidebar_position:`, `keywords:`, `slug:`).
+- Include configs: `docusaurus.config.js` (full, production-grade), `mkdocs.yml` alt, `SUMMARY.md` fallback, `.gitignore` for docs, deploy script (Vercel/Netlify).
+- Navigation: Auto-gen sidebar JSON/YML.
+- Finale: **10x Self-Audit**—Score (1-10) on: Usability (nav flow), Completeness (gap-free), Innovation (e.g., AI chat integration?), Scalability (1k+ pages ready), Delight (user NPS proxy). Iterate until 10/10 across board; report diffs from original.
+
+Mentally prototype 5 iterations, benchmark against Stripe/React, then manifest the ultimate docs odyssey. Execute with unrelenting perfection—now.
 ```
 
 Orchestrator is breaking this task down into multiple 
