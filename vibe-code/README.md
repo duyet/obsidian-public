@@ -32,5 +32,5 @@ Put important context, instructions, and constraints here so Claude Code can ref
 | [Day 3](./day-3-mcp) | MCP Integration | Added MCP, fought with timeouts, discovered alarms |
 | [Day 4](./day-4-websearch) | Web Search | Bot lied about news, added web search, simplified providers |
 | [Day 5](./day-5-dynamic-routing) | Dynamic Routing | Refactored routing to be LLM-based with agent self-registration |
-| [Day 6](./day-6-observability) | Observability | Tracking everything with D1 database for analytics dashboard |
+| [Day 6](day-6-observability-docs.md) | Observability | Tracking everything with D1 database for analytics dashboard |
 | [Day 7](./day-7-prompt-engineering) | Prompt Engineering | Optimizing CLAUDE.md based on best practices |
