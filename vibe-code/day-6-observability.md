@@ -3,11 +3,10 @@ title: "Day 6: Observability (TBU)"
 description: Observability tracking using D1
 ---
 
-
 I am want to track everything thought a dashboard with analytics. D1 maybe a good choice that we can track everything for a single request with everything happens. I am telling Claude what I want:
 
 ```
-Checkout the new branch and implement this feature.
+Checkout the new branch and implement this feature:
 
 I want to store all logging data in the D1 database with the following information:
 
