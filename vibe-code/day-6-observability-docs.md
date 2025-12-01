@@ -49,3 +49,27 @@ I am also asking shared-agents should manage this D1 migrations as will be using
      ☐ Phase 4: Update github-bot wrangler.toml
      ☐ Phase 5: Run checks and verify builds
 ```
+
+## Rewrite documents
+
+During the plan and implementation process, Claude creating a lot of documents in `docs/` folder, but they are sometime duplicates and the format content is not consistent. 
+
+```
+docs
+├── hono-middleware.md
+├── index.md
+├── multiagent-flows.html
+├── readme-multiagent.md
+├── README.md
+├── ...
+├── token-optimization-guide.md
+└── use-cases.md
+```
+
+`grok-4.1-fast` now have 2M input context tokens. I am think of giving it reading all of the source code then rewrite the better and overview document system. This time I am giving Roo Code a shot, I am using Orchestrator mode and here is the rewrited prompt 
+
+```
+
+```
+
+Orchestrator is breaking this task down into multiple 
